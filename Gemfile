@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass',  '~>3.2.0.0'
 gem 'autoprefixer-rails'
+gem 'bcrypt',               '3.1.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -49,3 +50,8 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+  gem 'puma',           '2.11.1'
+end

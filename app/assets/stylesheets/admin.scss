@@ -1,3 +1,40 @@
 // Place all the styles related to the Admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.zui-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.zui-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+.zui-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+.zui-table-highlight tbody tr:hover {
+    background-color: #CCE7E7;
+}
+.zui-table-horizontal tbody td {
+    border-left: none;
+    border-right: none;
+}
+h1 {
+  text-align: left !important;
+}  
+.admin-content{
+	margin-left: 20px;
+}  
+.admin-row{
+    margin-left: -380px;
+    margin-top: -15px;
+}

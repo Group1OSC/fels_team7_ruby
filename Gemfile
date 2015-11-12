@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 # bootstrap
 
-gem 'bootstrap-sass',  '~>3.2.0.0'
+gem 'bootstrap-sass',  '~>3.2.0'
 gem 'autoprefixer-rails'
 gem 'bcrypt',               '3.1.7'
-
+gem 'font-awesome-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
@@ -55,3 +55,8 @@ group :production do
   gem 'rails_12factor', '0.0.2'
   gem 'puma',           '2.11.1'
 end
+
+
+
+   
+#User.create(name: "thanhluan", email: "vuvanlyth@gmail.com", password: "12345678", password_confirmation: "12345678")

@@ -3,14 +3,25 @@
 <table id="">
 	<thead>
 		<tr>
-			<td>Categories</td>
-			<td>Action</td>
+			<td></td>
+			<td></td>
 		</tr>		
 	</thead>
 	<tbody>
 		<% @categories.each do |category| %>
 		<tr>
-			<td><%= category.name %></td>
+			<td><h3><%= category.name %></h3></td>
+			<td><h3><%#= category.id %></h3></td>
+			<%# 
+				@category = Category.find(params[:id])
+				@words = @category.words %>
+			<%# if @word.category.nil? 
+				@msg = "None"
+			else
+			  @words.each do |word| %>
+			<h5><%#= word.name %></h5>
+			<%# end %>
+			<%# end %>
 		</tr>
 		<% end %>
 	</tbody>

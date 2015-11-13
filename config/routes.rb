@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'words/index'
+
+  get 'lesson_words/index'
+
+  get 'relationships/index'
+
+  get 'lessons/index'
+
+  get 'activities/index'
+
   get 'categories/index'
 
   get 'sessions/new'

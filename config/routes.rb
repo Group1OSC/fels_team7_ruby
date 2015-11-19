@@ -2,15 +2,17 @@ Rails.application.routes.draw do
 
   get 'words/index'
 
-  get 'lesson_words/index'
+  # get 'lesson_words/index'
 
   get 'relationships/index'
 
-  get 'lessons/index'
+  # get 'lessons/index'
 
   get 'activities/index'
 
-  get 'categories/index'
+  # get 'categories/index'
+  resources :categories
+  resources :lessons
 
   get 'sessions/new'
 
@@ -80,7 +82,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   namespace :admin do
-    resources :users
+    resources :users, :categories, :words
   end
 
 end

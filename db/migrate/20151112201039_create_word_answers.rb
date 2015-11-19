@@ -1,6 +1,6 @@
-class CreateWordanswers < ActiveRecord::Migration
+class CreateWordAnswers < ActiveRecord::Migration
   def change
-    create_table :wordanswers do |t|
+    create_table :word_answers do |t|
       t.string :content
       t.integer :word_id
       t.integer :correct

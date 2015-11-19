@@ -10,19 +10,20 @@
 	<tbody>
 		<% @categories.each do |category| %>
 		<tr>
-			<td><h3><%= category.name %></h3></td>
-			<td><h3><%#= category.id %></h3></td>
-			<%# 
-				@category = Category.find(params[:id])
-				@words = @category.words %>
-			<%# if @word.category.nil? 
-				@msg = "None"
-			else
-			  @words.each do |word| %>
-			<h5><%#= word.name %></h5>
-			<%# end %>
-			<%# end %>
+			<td width="500px"><h3><%= category.name %></h3>
+				<% @words.each do |word|
+					if word.category_id == category.id %>	
+						<%= word.content%>&nbsp;&nbsp;
+					<% end %>
+				<% end %>
+				<p><%= button_to "Start", lessons_path({lesson: {category_id: category.id, user_id: current_user.id}}), :class => "lesson-button" %></p>
+			</td>
+			<td width="300px" height="200px">
+				<input height="200px" type="text" name="text-input-lesson">
+			</td>
 		</tr>
+
+
 		<% end %>
 	</tbody>
 </table>

@@ -27,20 +27,20 @@ ActiveRecord::Schema.define(version: 20151112201039) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "lesson_words", force: :cascade do |t|
+    t.integer  "lesson_id"
+    t.integer  "word_id"
+    t.integer  "word_answer_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "category_id"
     t.string   "result"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "lessonwords", force: :cascade do |t|
-    t.integer  "lesson_id"
-    t.integer  "word_id"
-    t.integer  "word_answer_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20151112201039) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
-  create_table "wordanswers", force: :cascade do |t|
+  create_table "word_answers", force: :cascade do |t|
     t.string   "content"
     t.integer  "word_id"
     t.integer  "correct"

@@ -4,6 +4,12 @@
 	
 	<% @lesson.words.each do |word| %>
 		<%= word.content%>
+
+		<%= f.fields_for :word_answers do |builder| %>
+			<% #code here %>
+			<%= builder.check_box :correct %>
+		<% end %>
+
 	<% end %>
 
 <% end %>

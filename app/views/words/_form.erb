@@ -1,0 +1,6 @@
+	
+	<%= form_tag 'Words', :method => :get do  %>
+		<%= text_field_tag :category_id %>
+		<%#= collection_select :category_id, Category.all, :id, :name %>
+		<%= submit_tag "Filter" %>
+	<% end %>

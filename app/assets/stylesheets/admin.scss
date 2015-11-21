@@ -12,14 +12,17 @@
     border: solid 1px #DDEEEE;
     color: #336B6B;
     padding: 10px;
-    text-align: left;
+    text-align: center;
     text-shadow: 1px 1px 1px #fff;
+    width: 500px;
 }
 .zui-table tbody td {
     border: solid 1px #DDEEEE;
     color: #333;
     padding: 10px;
     text-shadow: 1px 1px 1px #fff;
+    width: 500px;
+    text-align: center;
 }
 .zui-table-highlight tbody tr:hover {
     background-color: #CCE7E7;

@@ -1,18 +1,73 @@
-<h1>Words</h1>
-<html>
-<table id="">
-	<thead>
-		<tr>
-			<td></td>
-			<td></td>
-		</tr>		
-	</thead>
-	<tbody>
-		<% @words.each do |word| %>
-		<tr>
-			<td><h5><%= word.content %></h5></td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
-</html>
+<p class="text-center"><h1>Words List</h1></p>
+<hr/>
+
+<div class="nav-filter">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<%= form_tag '', :method => :get do %>
+				<div class="row">
+					<div class="col-md-4"><br/>
+						<%= label_tag :category_id %>
+					</div>	
+				</div>	
+				<div class="row">
+					<div class="col-md-4">
+						<%#= collection_select :category_id, :id, Category.all, :id, :name %>	
+						<% @options = Category.all.map { |c| [ c.name, c.id ] } %>
+						<%= select_tag("category_id", options_for_select(@options)) %>
+					</div>
+					<div class="col-md-2">
+						<%# radio %>
+						<%=radio_button_tag 'Learn', '1', true%>Learn
+					</div>
+					<div class="col-md-2">
+						<%# radio %>
+						<%=radio_button_tag 'Learn', '2'%>Not Learn
+					</div>
+					<div class="col-md-2">
+						<%# radio %>
+						<%=radio_button_tag 'Learn', '3'%>All
+					</div>
+				</div>	
+				<div class="row">
+					<div class="col-md-3 col-md-offset-4">
+						<%= submit_tag 'Filter' %>
+					</div>	
+				</div>	
+				<% end %>
+			</div>
+		</div>
+
+
+	</div>	
+</div>
+
+
+</div>
+<hr/>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<table id="word_lists" class="zui-table zui-table-horizontal zui-table-highlight" >
+				<thead>
+					<tr>
+						<th>Word</th>
+						<th>Answer</td>
+					</tr>		
+				</thead>
+				<tbody>
+									
+					<% @words.each do |word| %>
+					<tr>
+						<td><h5><%= word.content %></h5></td>
+						<td><%= word.word_answers.find_by(correct: true).try(:content) %></td>
+					</tr>		
+					<% end %>
+		
+				</tbody>
+			</table>
+		</div>	
+	</div>
+</div>
+
